@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="/static/images/logo.png" class="img-responsive" />
+        </div>
+        <div class="col-md-6">
+           <h1>{{ appname }}</h1>
+           <p class="lead">Un diagnostic en distanciel, c'est mieux que d'aller chez le toubib!</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Késako ce truc?</h2>
+        <p>
+            Un bobo ? {{ appname }} vous met en contact avec le médecin de votre choix!
+            Vous prenez rendez-vous, vous vous rendez dans la pharmacie affiliée près de chez vous, et vous
+            vous installez dans l'une de no cabines hyper-modernes en cours d'approbation par la DMN.
+            L'écran dans la cabine vous permettra de rentrer en vision-conférence avec votre médecin assigné,
+            en résolution 4K que vous pourrez même compter ses poils de barbe. Nos nombreux instruments
+            connectés aideront le docteur à prendre votre pression artérielle, votre température, etc.
+            Il est aussi possible de réaliser des actes plus précis, comme une prise de sang à distance,
+            ou bien un examen de votre prostate. Tout ça pour un prix qui défie toute concurrence!<br/>
+            Avec Bobo Rapido, votre santé est dans de bonnes mains!
+        </p>
+        <p><a class="btn btn-default" href="{{ url_for('contact') }}">Je prends rendez-vous! &raquo;</a></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">   
+        <p style="font-size: xx-small;">BoboRapido n'est pas responsable en cas de mauvais diagnostic, de dommage 
+        corporel ou psychologique dû à l'utilisation des cabines, de mauvaise utilisation des 
+        instruments à l'intérieur de la cabine, d'insertion du thermomètre CNQMMAP dans un orifice 
+        non prévu, d'attaque de tomates tueuses, ou encore de meurtre par Art le Clown. Toute 
+        utilisation inapropriée de nos instruments sera filmée et postée sur TikTok.</p>
+    </div>
+</div>
+
+{% endblock %}
