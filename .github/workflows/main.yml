@@ -47,8 +47,9 @@ jobs:
           push: false
           tags: client-portal-tests:${{ github.sha }}
           load: true
-# 
-#       - name: run tests
-#         run: |
-#           docker run --rm client-portal-tests:${{ github.sha }} pytest /app/ClientPortal/tests/just-a-test.py
+ 
+      - name: run tests
+        run: |
+          docker run --rm client-portal-tests:${{ github.sha }} pytest /app/ClientPortal/tests/just-a-test.py
+
 
