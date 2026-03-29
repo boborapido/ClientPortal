@@ -18,6 +18,9 @@
     <Name>ClientPortal</Name>
     <RootNamespace>ClientPortal</RootNamespace>
     <InterpreterId>MSBuild|client-portal-env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>pytest</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>.</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
