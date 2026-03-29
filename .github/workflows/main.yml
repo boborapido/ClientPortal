@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  client-portal:
-    runs-on: ubuntu-latest
+  build-scan:
+    runs-on: ubuntu-slim
     steps:
       - name: checkout
         uses: actions/checkout@v6.0.2
@@ -20,14 +20,35 @@ jobs:
         with:
           context: .
           push: false
-          tags: client-portal:${{ github.sha }}
+          tags: client-portal-build-scan:${{ github.sha }}
           load: true
     
       - name: run Trivy
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'client-portal:${{ github.sha }}'
-          exit-code: '0'
+          exit-code: '1'
           severity: 'CRITICAL,HIGH,MEDIUM'
           format: 'table'
-                
+
+  tests:
+    runs-on: ubuntu-slim
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6.0.2
+        
+      - name: set up Docker Buildx
+        uses: docker/setup-buildx-action@v4.0.0
+
+      - name: build Docker image
+        uses: docker/build-push-action@v7.0.0
+        with:
+          context: .
+          push: false
+          tags: client-portal-tests:${{ github.sha }}
+          load: true
+
+      - name: run tests
+        run: |
+          docker run --rm myapp:${{ github.sha }} pytest /app/ClientPortal/tests/just-a-test.py
+
