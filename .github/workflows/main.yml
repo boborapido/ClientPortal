@@ -22,4 +22,10 @@ jobs:
           push: false
           tags: client-portal:${{ github.sha }}
           load: true
-          
+    
+      - name: run Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          exit-code: '1'
+          severity: 'CRITICAL,HIGH,MEDIUM'
+                
