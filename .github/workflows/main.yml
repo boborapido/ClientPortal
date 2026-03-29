@@ -20,6 +20,6 @@ jobs:
         with:
           context: .
           push: false
-          tags: ClientPortal:${{ github.sha }}
+          tags: client-portal:${{ github.sha }}
           load: true
           
