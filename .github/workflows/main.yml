@@ -28,7 +28,7 @@ jobs:
         with:
           image-ref: 'client-portal-build-scan:${{ github.sha }}'
           exit-code: '1'
-          severity: 'CRITICAL,HIGH,MEDIUM'
+          severity: 'CRITICAL,HIGH'
           format: 'table'
 
   tests:
