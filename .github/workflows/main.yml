@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-scan:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v6.0.2
@@ -32,7 +32,7 @@ jobs:
           format: 'table'
 
   tests:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v6.0.2
