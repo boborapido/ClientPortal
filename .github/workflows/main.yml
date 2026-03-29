@@ -31,22 +31,22 @@ jobs:
           severity: 'CRITICAL,HIGH,MEDIUM'
           format: 'table'
 
-  # tests:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: checkout
-  #       uses: actions/checkout@v6.0.2
-  #       
-  #     - name: set up Docker Buildx
-  #      uses: docker/setup-buildx-action@v4.0.0
-# 
-#       - name: build Docker image
-#         uses: docker/build-push-action@v7.0.0
-#         with:
-#           context: .
-#           push: false
-#           tags: client-portal-tests:${{ github.sha }}
-#           load: true
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6.0.2
+        
+      - name: set up Docker Buildx
+        uses: docker/setup-buildx-action@v4.0.0
+
+      - name: build Docker image
+        uses: docker/build-push-action@v7.0.0
+        with:
+          context: .
+          push: false
+          tags: client-portal-tests:${{ github.sha }}
+          load: true
 # 
 #       - name: run tests
 #         run: |
