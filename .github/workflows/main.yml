@@ -50,6 +50,6 @@ jobs:
  
       - name: run tests
         run: |
-          docker run --rm client-portal-tests:${{ github.sha }} pytest /app/ClientPortal/tests/just-a-test.py
+          docker run --rm client-portal-tests:${{ github.sha }} pytest /app/tests/just-a-test.py
 
 
