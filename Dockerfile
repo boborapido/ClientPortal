@@ -16,6 +16,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the app directory contents into the container
 COPY runserver.py .
 COPY ./ClientPortal ./ClientPortal
+COPY ./tests ./tests
 
 # Set environment variables
 ENV SERVER_HOST=0.0.0.0
