@@ -31,6 +31,7 @@
     <Compile Include="runserver.py" />
     <Compile Include="ClientPortal\__init__.py" />
     <Compile Include="ClientPortal\views.py" />
+    <Compile Include="tests\just-a-test.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ClientPortal\" />
@@ -40,6 +41,7 @@
     <Folder Include="ClientPortal\static\images\" />
     <Folder Include="ClientPortal\static\scripts\" />
     <Folder Include="ClientPortal\templates\" />
+    <Folder Include="tests\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientPortal\static\images\logo.png" />

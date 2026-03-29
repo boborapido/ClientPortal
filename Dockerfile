@@ -4,6 +4,7 @@ FROM python:3.15.0a7-slim-trixie
 WORKDIR /app
 
 RUN apt update && \
+	apt upgrade && \
 	apt install -y --no-install-recommends procps
 	
 # Copy the requirements file into the container
